@@ -23,4 +23,5 @@ func Convert(filename string) string {
 	} else {
 		log.Fatal(err)
 	}
+	return ""
 }
