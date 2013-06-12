@@ -6,13 +6,12 @@ import (
 	_ "image/png"
 	_ "image/gif"
 	"os"
-	"log"
 	"encoding/base64"
 	"io/ioutil"
 )
 
 func Convert(filename string) (data string, err error) {
-  data := ""
+  data = ""
 	file,err := os.Open(filename)
 	defer file.Close()
 
