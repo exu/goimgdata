@@ -11,7 +11,8 @@ import (
 	"io/ioutil"
 )
 
-func Convert(filename string) string {
+func Convert(filename string) (data string, err error) {
+  data := ""
 	file,err := os.Open(filename)
 	defer file.Close()
 
@@ -19,9 +20,8 @@ func Convert(filename string) string {
 		_, t, _ := image.Decode(file)
 		byteData, _ := ioutil.ReadFile(filename)
 		base64encoded := base64.StdEncoding.EncodeToString(byteData)
-		return "data:image/" + t + ";base64," + base64encoded
-	} else {
-		log.Fatal(err)
+		data = "data:image/" + t + ";base64," + base64encoded
 	}
-	return ""
+
+	return data, err
 }
