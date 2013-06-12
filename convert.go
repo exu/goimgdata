@@ -11,7 +11,8 @@ import (
 	"io/ioutil"
 )
 
-func Convert(filename string) string {
+func Convert(filename string) (data string, err error) {
+  data := ""
 	file,err := os.Open(filename)
 	defer file.Close()
 
