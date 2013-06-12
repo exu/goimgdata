@@ -1,7 +1,6 @@
 package goimgdata
 
 import (
-	"fmt"
 	 "image"
 	_ "image/jpeg"
 	_ "image/png"
@@ -13,7 +12,6 @@ import (
 )
 
 func Convert(filename string) string {
-	// filename := os.Args[1]
 	file,err := os.Open(filename)
 	defer file.Close()
 
